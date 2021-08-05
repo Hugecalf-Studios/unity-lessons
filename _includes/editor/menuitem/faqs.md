@@ -1,0 +1,2 @@
+- Can I dynamically add menu items at runtime?
+  - No, unfortunately not - they have to be defined at compile time using `MenuItem`.

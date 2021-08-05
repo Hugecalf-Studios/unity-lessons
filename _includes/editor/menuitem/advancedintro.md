@@ -1,0 +1,1 @@
+Just when you thought you had mastered `MenuItem`, there's more! You have probably seen in Unity's own menus, and menus of plugins, that you can do much more with menu items. Things like greyed out/disabled menu items, checkmarks/ticks and keyboard shortcuts. You can do these things too if you read on!

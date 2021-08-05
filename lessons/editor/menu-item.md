@@ -1,4 +1,28 @@
 # Customising Unity's Menu Bar
+
+
+[1 Mastering the basics](#1-mastering-the-basics)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.1 Vanilla Menu Item](#11-vanila-menuitem)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2 Nesting](#12-nesting)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.3 Trivia: How it works](#13-trivia-how-it-works)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.4 Using const for the path](#14-using-const-for-the-path)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.5 Ordering](#15-ordering)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.6 Divide and conquer](#16-divide-and-conquer)
+
+[2 More advanced usage](#2-more-advanced-usage)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1 Disabled items](#21-disabled-items)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.2 Checkmarks/ticks](#22-checkmarksticks)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.3 Keyboard shortcuts](#23-keyboard-shortcuts)
+
 ## 1. Mastering the basics
 ### 1.1 Vanila MenuItem
 
@@ -184,7 +208,7 @@ private static bool SettingValidate() {
 ```
 
 ### BONUS!
-If you want the setting to persist between Unity editor close and reopens (which the above example will not) you can simply modify the above example to use EditorPrefs as shown below. Changing the IsSettingEnabled field to a property is the only change.
+If you want the setting to persist between Unity editor sessions (which the above example will not) you can simply modify the above example to use EditorPrefs as shown below. The only modification changing IsSettingEnabled to a property which implements EditorPrefs.
 
 ```
 private const string SettingPrefKey = "Setting";
@@ -205,18 +229,51 @@ private static bool SettingValidate() {
 }
 ```
 
-- editor pref example
-
 
 ### 2.3 Keyboard shortcuts
 ![Unity's File menu with keyboard shortcuts](unity-shortcuts.png)
 
-Coming soon....
+The final topic is assigning keyboard shortcuts to menu items. This is, once again, a simple thing to do, and can save you lots of time for commonly used menu items.
 
+To add a keyboard shortcut to a menu item, you need to suffix a string which specifies the shortcut to the end of the menu item path. You must have a space between your menu item and the shortcut specifier.
+```
+private const string HelloWorldMenuPath = CustomMenuBasePath + "Hello World! <SHORTCUT_SPECIFIER>";
+```
 
+In order to make it as unclear as possible, Unity introduced some some symbols which represent the modifier keys Control/Command, Shift and Alt keys.
+
+|Symbol|Keyboard Key|
+|-|-|
+|%|Ctrl/Command|
+|#|Shift|
+|&|Alt|
+|_|None|
+
+Combining these modifier keys with any the following key codes gives you a load of options to create keyboard shortcuts.
+
+|Special Key|Keyboard Key|
+|-|-|
+|A-Z|Letters A-Z|
+|LEFT, RIGHT, UP, DOWN|Arrow Keys|
+|F1-F12|F1-F12|
+|HOME|Home
+|END|End
+|PGUP|Page Up
+|PGDN|Page Down
+
+So, to assign the keyboard shortcut `Ctrl+Shft+I` to a menu item, you simply suffix the string `%#I` to the end of your menu item path. You must have a space between the end of your menu item name and the keyboard shortcut for it to register.
+
+![Custom menu with keyboard shortcuts](shortcuts.png)
+
+```
+private const string HelloWorldMenuPath = CustomMenuBasePath + "Hello World! %#I";
+private const string GoodbyeWorldMenuPath = CustomMenuBasePath + "Goodbye World! _I";
+```
+
+> Note that to assign a shortcut of a single key on its own, without any modifiers, you must use the underscore `_` symbol.
 
 
 
 # FAQ
-- Can I dynamically add menu items through code
-  - No, unfortunately not - they have to be defined at compile time.
+- Can I dynamically add menu items at runtime?
+  - No, unfortunately not - they have to be defined at compile time using `MenuItem`.

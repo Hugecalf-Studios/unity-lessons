@@ -1,5 +1,0 @@
-- MenuItem attribute
-- ContextMenu attribute
-- editor code - editor directories, assembly definitions, #if UNITY_EDITOR 
-- nested Editors in the same class so you can access private var names etc (partial class)
-- Roslyn analyzer

@@ -4,6 +4,7 @@
 
 layout: default
 title: Customising Unity’s Menu Bar
+type: lesson
 sections:
   - title: Mastering the basics
     sections:

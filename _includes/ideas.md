@@ -1,0 +1,8 @@
+- ContextMenu attribute
+- RuntimeInitializeOnLoadMethod 
+- OnCollision[Enter/Stay/Exit] and OnTrigger[Enter/Stay/Exit] exact details
+- ForceMode
+- Null operators
+- Editor code: editor directories, editor-only assembly definitions, #if UNITY_EDITOR 
+- Nested Editors in the same class so you can access private var names etc (partial class)
+- Roslyn analyzers

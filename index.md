@@ -6,9 +6,11 @@ layout: default
 ---
 
 # Current Lessons:
-{% for page in {{site.pages}} %}
-{% if {{page.type}} == "lesson" %}
-[{{page.title}}]({{site.url}}{{site.baseurl}}{{page.url}})
+{% assign count = 1 %}
+{% for page in site.pages %}
+{% if page.type == "lesson" %}
+## [{{count}} {{page.title}}]({{site.url}}{{site.baseurl}}{{page.url}})
+{% assign count = count | plus: 1 %}
 {% endif %}
 {% endfor %}
 

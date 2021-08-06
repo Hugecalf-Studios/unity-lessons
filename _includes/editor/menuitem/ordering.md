@@ -4,7 +4,7 @@ You specify the order by using the `priority` field. The menu items will be arra
 
 ![A simple customised menu with simple ordering](ordered.png)
 
-```
+```c#
 [MenuItem(Item1MenuPath, priority = 1)]
 private static void Item1() {
     Debug.Log("Item 1!");

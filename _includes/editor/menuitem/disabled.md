@@ -7,7 +7,7 @@ The confusion comes in by assigning the Validation Function. To do so, you must 
 ![Custom menu with disabled item](disabled.png)
 
 The above is made with the following code. Note how Item1 has a Validation Function assigned which returns false. This will mean Item1 is always disabled. Also note that Item2 has no Validation Function, which acts the same as a Validation Function which returns true, meaning Item2 is always enabled.
-```
+```c#
 [MenuItem(Item1MenuPath, priority = 1)]
 private static void Item1() {
     Debug.Log("Item 1!");
@@ -25,7 +25,7 @@ private static void Item2() {
 ```
 
 You can have some fun with this...
-```
+```c#
 [MenuItem(RandomMenuPath, true)]
 private static bool RandomItemValidate() {
     return Random.Range(0, 2) == 0;

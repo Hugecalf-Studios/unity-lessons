@@ -3,7 +3,7 @@
 The final topic is assigning keyboard shortcuts to menu items. This is, once again, a simple thing to do, and can save you lots of time for commonly used menu items.
 
 To add a keyboard shortcut to a menu item, you need to suffix a string which specifies the shortcut to the end of the menu item path. You must have a space between your menu item and the shortcut specifier.
-```
+```c#
 private const string HelloWorldMenuPath = CustomMenuBasePath + "Hello World! <SHORTCUT_SPECIFIER>";
 ```
 
@@ -32,7 +32,7 @@ So, to assign the keyboard shortcut `Ctrl+Shft+I` to a menu item, you simply suf
 
 ![Custom menu with keyboard shortcuts](shortcuts.png)
 
-```
+```c#
 private const string HelloWorldMenuPath = CustomMenuBasePath + "Hello World! %#I";
 private const string GoodbyeWorldMenuPath = CustomMenuBasePath + "Goodbye World! _I";
 ```

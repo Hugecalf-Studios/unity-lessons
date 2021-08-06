@@ -10,7 +10,7 @@ To add or remove the checkmark, we use the method `Menu.SetChecked`. The first p
 
 We can achieve a very simply toggling action with the following code.
 
-```
+```c#
 private static bool IsSettingEnabled;
 		
 [MenuItem(SettingMenuPath, priority = 1)]
@@ -26,7 +26,7 @@ private static bool SettingValidate() {
 ```
 
 Once again, you can have some fun with this...
-```
+```c#
 [MenuItem(SettingMenuPath, priority = 1)]
 private static void Setting() {
 }
@@ -41,7 +41,7 @@ private static bool SettingValidate() {
 ### BONUS!
 If you want the setting to persist between Unity editor sessions (which the above example will not) you can simply modify the above example to use EditorPrefs as shown below. The only modification changing IsSettingEnabled to a property which implements EditorPrefs.
 
-```
+```c#
 private const string SettingPrefKey = "Setting";
 private static bool IsSettingEnabled {
     get => EditorPrefs.GetBool(SettingPrefKey);

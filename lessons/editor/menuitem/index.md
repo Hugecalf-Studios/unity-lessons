@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Customising Unity’s Menu Bar
+title: Customising Unity’s Menu Bar using MenuItem
 type: lesson
 sections:
   - title: Mastering the basics
@@ -12,7 +12,7 @@ sections:
         content: vanila.md
       - title: Nesting
         content: nesting.md
-      - title: 'Trivia: How it works'
+      - title: How it works
         content: howitworks.md
       - title: Using const for the path
         content: consts.md
@@ -20,6 +20,8 @@ sections:
         content: ordering.md
       - title: Divide and conquer
         content: divideandconquer.md
+      - title: Hijacking Unity's built in menus
+        content: usingunitymenus.md
   - title: More advanced usage
     content: advancedintro.md
     sections:

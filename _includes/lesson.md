@@ -27,7 +27,7 @@
 {% for subSection in section.sections %}
 {% assign subSectionIndex = forloop.index %}
 
-## {{sectionIndex}}.{{subSectionIndex}} {{subSection.title}}
+### {{sectionIndex}}.{{subSectionIndex}} {{subSection.title}}
 {% include {{root}}{{subSection.content}} %}
 
 {% endfor %}

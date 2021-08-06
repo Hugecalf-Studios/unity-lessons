@@ -1,0 +1,21 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{% assign baseurl = site.url | append: site.baseurl %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ <url>
+    <loc>{{baseurl}}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% for page in site.pages %}
+  {% if page.type == "lesson" %}
+  <url>
+    <loc>{{ baseurl | append: page.url }}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% endif %}
+  {% endfor %}
+</urlset>

@@ -12,12 +12,12 @@ sections:
       - title: Vanilla MenuItem
         content: vanilla.md
         id: vanila
-      - title: Nesting
-        content: nesting.md
-        id: nesting
       - title: How it works
         content: howitworks.md
         id: how-it-works
+      - title: Nesting
+        content: nesting.md
+        id: nesting
       - title: Using const for the path
         content: consts.md
         id: consts
